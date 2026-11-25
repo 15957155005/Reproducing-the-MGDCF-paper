@@ -1,0 +1,55 @@
+INFO:root:Namespace(model_name='MGDCF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-11-25 20:58:51 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ alpha              | 0.1                 
+ batch_size         | 2048                
+ beta               | 0.9                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 0                   
+ emb_size           | 64                  
+ epoch              | 2                   
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ l2                 | 0.0                 
+ loss_type          | InfoBPR             
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 4                   
+ num_neg            | 8                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ self_loop          | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1497344
+INFO:root:MGDCF(
+  (u_embeddings): Embedding(14682, 64)
+  (i_embeddings): Embedding(8714, 64)
+)
+INFO:root:Test Before Training: (HR@5:0.0527,NDCG@5:0.0329,HR@10:0.1025,NDCG@10:0.0487,HR@20:0.2035,NDCG@20:0.0739,HR@50:0.5182,NDCG@50:0.1352)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=2.1528 [30.9 s]	dev=(HR@5:0.2523,NDCG@5:0.1670) [7.3 s] *
+INFO:root:Epoch 2     loss=1.8598 [16.7 s]	dev=(HR@5:0.2520,NDCG@5:0.1669) [7.5 s]
+INFO:root:
+Best Iter(dev)=    1	 dev=(HR@5:0.2523,NDCG@5:0.1670) [62.5 s] 
+INFO:root:Load model from ../model/MGDCF/MGDCF__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0.0__emb_size=64__n_layers=4__alpha=0.1__beta=0.9__loss_type=InfoBPR__num_neg=8__batch_size=2048.pt
+INFO:root:
+Dev  After Training: (HR@5:0.2523,NDCG@5:0.1670,HR@10:0.3834,NDCG@10:0.2093,HR@20:0.5252,NDCG@20:0.2452,HR@50:0.7076,NDCG@50:0.2814)
+INFO:root:
+Test After Training: (HR@5:0.2086,NDCG@5:0.1352,HR@10:0.3324,NDCG@10:0.1749,HR@20:0.4723,NDCG@20:0.2103,HR@50:0.6530,NDCG@50:0.2460)
+INFO:root:Saving top-100 recommendation results to: ../log/MGDCF\MGDCF__Grocery_and_Gourmet_Food__0__lr=0\rec-MGDCF-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/MGDCF\MGDCF__Grocery_and_Gourmet_Food__0__lr=0\rec-MGDCF-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2026-11-25 21:00:36 ---------------------------------------------
